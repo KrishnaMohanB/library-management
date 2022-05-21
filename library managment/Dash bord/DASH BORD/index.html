@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+
+    <!--- basic page needs
+    ================================================== -->
+    <meta charset="utf-8">
+    <title>Amrita</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- mobile specific metas
+    ================================================== -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- CSS
+    ================================================== -->
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/vendor.css">
+    <link rel="stylesheet" href="css/main.css">
+    <style>
+        #previews{
+            overflow: auto;
+            white-space: nowrap;          
+        }
+        .tooltip{
+            white-space: normal;
+        }
+        .preview-div {
+            width: 120px;
+            display: inline-block;
+            padding-right: 20px;
+        }
+        
+        .preview-div .image-div{
+            padding-bottom: 5px;
+        }            
+        .preview-div .fotina{
+            display:block;
+            margin:auto;
+            width: 85px;
+            height: 117px;
+        }
+        .preview-div:hover .fotina {
+            box-shadow:  0px 0px 5px;
+        }
+        .preview-div svg{
+            display:block;
+            margin:auto;
+            opacity: 0.4;
+            width: 50px;
+            height: 117px;
+        }
+        .preview-div:hover svg{
+            opacity: 0.9;            
+        }
+        .preview-div .info {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            font-size: 0.75em;
+        }
+        .preview-div:hover .info{}
+    </style>    
+    <!-- script
+    ================================================== -->
+    <script src="js/modernizr.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+    
+
+    <!-- favicons
+    ================================================== -->
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="manifest" href="site.webmanifest">
+
+</head>
+
+<body style="background-image: url('1234.jpg');">
+
+    <!-- preloader
+    ================================================== -->
+    <div id="preloader">
+        <div id="loader" class="dots-fade">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+
+    <div id="top" class="s-wrap site-wrapper">
+
+        <!-- site header
+        ================================================== -->
+        <header class="s-header">
+
+            <div class="header__top">
+                <div class="header__logo">
+                    <a class="site-logo" href="index.html">
+                        <p style="font-size: 40px;color:white;">Amrita</p>
+                    </a>
+                </div>
+            </div> <!-- end header__top -->
+
+            <nav class="header__nav-wrap">
+
+                <ul class="header__nav">
+                    <li class="current"><a href="index.html" title="">Home</a></li>
+                    <li class="has-children">
+                        <a href="#0" title="">Categories</a>
+                        <ul class="sub-menu">
+                        <li><a href="category.html">Lifestyle</a></li>
+                        <li><a href="category.html">Health</a></li>
+                        <li><a href="category.html">Family</a></li>
+                        <li><a href="category.html">Management</a></li>
+                        <li><a href="category.html">Travel</a></li>
+                        <li><a href="category.html">Work</a></li>
+                        </ul>
+                    </li>
+                    <li class="has-children">
+                        <a href="#0" title="">Blog Posts</a>
+                        <ul class="sub-menu">
+                        <li><a href="single-video.html">Video Post</a></li>
+                        <li><a href="single-audio.html">Audio Post</a></li>
+                        <li><a href="single-gallery.html">Gallery Post</a></li>
+                        <li><a href="single-standard.html">Standard Post</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="styles.html" title="">Styles</a></li>
+                    <li><a href="page-about.html" title="">About</a></li>
+                    <li><a href="page-contact.html" title="">Contact</a></li>
+                </ul> <!-- end header__nav -->
+
+                <ul class="header__social">
+                    <li class="ss-facebook">
+                        <a href="https://facebook.com/">
+                            <span class="screen-reader-text">Facebook</span>
+                        </a>
+                    </li>
+                    <li class="ss-twitter">
+                        <a href="#0">
+                            <span class="screen-reader-text">Twitter</span>
+                        </a>
+                    </li>
+                    <li class="ss-dribbble">
+                        <a href="#0">
+                            <span class="screen-reader-text">Dribbble</span>
+                        </a>
+                    </li>
+                    <li class="ss-pinterest">
+                        <a href="#0">
+                            <span class="screen-reader-text">Behance</span>
+                        </a>
+                    </li>
+                </ul>
+
+            </nav> <!-- end header__nav-wrap -->
+
+            <!-- menu toggle -->
+            <a href="#0" class="header__menu-toggle">
+                <span>Menu</span>
+            </a>
+
+        </header> <!-- end s-header -->
+
+
+        <!-- search
+        ================================================== -->
+        
+         <!-- end s-search -->
+
+
+        <!-- site content
+        ================================================== -->
+        <div class="s-content">
+            
+            <div class="masonry-wrap">
+
+                <div class="masonry">
+    
+                    <div class="grid-sizer"></div>
+<!-- search engine -->
+                    <div class='container'> 
+                        <div class="input-group">
+                            <span class="input-group-addon"  style="background-color: #0e0f0e;color:aliceblue;"      id="basic-addon1">Search book</span>
+                            <input id="input" type="text" class="form-control">
+                        </div>
+                        <br>
+                        <div class="panel panel-default">
+                            <div class="panel-body" id="previews"></div>
+                        </div>
+                    </div>
+
+                    
+    
+
+    
+                </div> <!-- end masonry -->
+
+            </div> <!-- end masonry-wrap -->
+
+           
+
+        </div> <!-- end s-content -->
+
+
+    </div> <!-- end s-wrap -->
+
+
+    <!-- Java Script
+    ================================================== -->
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/plugins.js"></script>
+    <script src="js/main.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+        $('#input').bind('input', startTimerAction);
+
+        previewTemplate="<div class='preview-div'>\
+                                <div class='image-div'>\
+                                    <img class='img-responsive fotina'/>\
+                                </div>\
+                                <p class='info'>\
+                                        <strong><span class='title'></span></strong></br>\
+                                        <span class='authors'></span></br>\
+                                        <span class='publish'></span>\
+                                <p>\
+                             </div>"
+        
+        // previewTemplate="<article class=\"masonry__brick entry format-standard animate-this\">\
+        //                     <div class=\"entry__thumb\">\
+        //                         <a href=\"single-standard.html\" class=\"entry__thumb-link\">\
+        //                             <img src=\"images/thumbs/masonry/woodcraft-600.jpg\" \
+        //                                     srcset=\"images/thumbs/masonry/woodcraft-600.jpg 1x, images/thumbs/masonry/woodcraft-1200.jpg 2x\" alt=\"\">\
+        //                         </a>\
+        //                     </div>\
+        //                     <div class=\"entry__text\">\
+        //                         <div class=\"entry__header\">\
+        //                             <h2 class=\"entry__title\"><a href=\"single-standard.html\">Just a Standard Format Post.</a></h2>\
+        //                             <div class=\"entry__meta\">\
+        //                                 <span class=\"entry__meta-cat\">\
+        //                                     <a href=\"category.html\">Design</a>\
+        //                                     <a href=\"category.html\">Photography</a>\
+        //                                 </span>\
+        //                                 <span class=\"entry__meta-date\">\
+        //                                     <a href=\"single-standard.html\">Apr 29, 2019</a>\
+        //                                 </span>\
+        //                             </div>\
+        //                         </div>\
+        //                         <div class=\"entry__excerpt\">\
+        //                             <p>\
+        //                             Lorem ipsum Sed eiusmod esse aliqua sed incididunt aliqua incididunt mollit id et sit proident dolor nulla sed commodo est ad minim elit reprehenderit nisi officia aute incididunt velit sint in aliqua...\
+        //                             </p>\
+        //                         </div>\
+        //                     </div>\
+        //                 </article>/"
+         svgBookIcon='<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="16" height="16" viewBox="0 0 16 16">\
+                        <path d="M14 2v13h-10.5c-0.829 0-1.5-0.672-1.5-1.5s0.671-1.5 1.5-1.5h9.5v-12h-10c-1.1 0-2 0.9-2 2v12c0 1.1 0.9 2 2 2h12v-14h-1z" fill="#444444"></path>\
+                        <path d="M3.501 13v0c-0 0-0.001 0-0.001 0-0.276 0-0.5 0.224-0.5 0.5s0.224 0.5 0.5 0.5c0 0 0.001-0 0.001-0v0h9.498v-1h-9.498z" fill="#444444"></path>\
+                    </svg>'          
+
+        function googleBookRequest(query,successCallback,failCallback){        
+            var url =  "https://www.googleapis.com/books/v1/volumes?";
+            var q = '';        
+            var standard = ["intitle","inauthor","inpublisher","subject","isbn","lccn","oclc"];
+
+            //search params
+            if(query.all)
+                q += query.all;
+            /*
+            * insert all key->value in query
+            * using google standard 
+            */
+            for( var key in query ){
+                if(key == 'all')
+                    continue;
+                if(key in standard)
+                    q += '+'+key+':'+query[key];         
+            }
+            
+            for(var key in query){
+                if(key == 'all')
+                    continue;
+                q += '&'+key+'='+query[key];
+            }
+            
+            if(!q)
+                return;
+
+            console.log("Query to Google Books: \n"+JSON.stringify(query));
+                            
+            url += 'q='+q;
+
+            $.ajax({
+                dataType: "json",
+                url: url,
+                success: successCallback,
+                fail: failCallback
+            });
+        }
+
+        function filterGoogleBook(googleBook){
+            var filtered = {};                
+            filtered.title = googleBook.title;
+            filtered.authors = googleBook.authors;
+            filtered.thumbnail = '';
+            filtered.publish = '';
+            
+            //thumbnail
+            if(googleBook.imageLinks &&
+               googleBook.imageLinks.thumbnail)                
+                    filtered.thumbnail = googleBook.imageLinks.thumbnail;
+            
+            //published (parse date)      
+            if(googleBook.publishedDate){                  
+                var date = new Date(googleBook.publishedDate);
+                var year = date.getFullYear(date);
+                filtered.publish = year +' ';
+            }
+            if(googleBook.publisher)                    
+                filtered.publish += googleBook.publisher;
+            
+            return filtered;
+        }
+    
+        var currTimer;
+
+        function startTimerAction(){
+            var query = $("#input").val();
+            if (currTimer)
+                window.clearTimeout(currTimer);
+            if(query){
+                var googleReq = {'all':query,
+                                 'projection':'lite',
+                                 'maxItems':15
+                                };
+                currTimer = window.setTimeout( function () { googleBookRequest(googleReq,onQuerySuccess,onQueryFail) }, 1500);
+                    
+            }else
+                cleanResults();
+        }
+
+        function onQuerySuccess(data){
+            cleanResults();
+            $('#results').html("<pre>"+JSON.stringify(data, null, " ")+"</pre>");
+            if(! data.items)
+                return;
+            
+            var totalResults = data.items.length;              
+            for(i=0; i<totalResults; i++){
+                var googleBook = data.items[i].volumeInfo
+                addPreview(filterGoogleBook(googleBook));
+            }
+        }
+
+        function onQueryFail(){
+            cleanResults();
+        }
+
+        function addPreview(book){
+       
+            var newPreview = $(previewTemplate);
+            if(book.thumbnail){
+                newPreview.find('.fotina').attr("src",book.thumbnail);
+            }else{
+                newPreview.find('.fotina').hide();
+                bookIcon = $(svgBookIcon);
+                newPreview.find('.image-div').append(bookIcon);
+            }
+            newPreview.find('.title').html(book.title);
+            newPreview.find('.authors').html(book.authors);
+            newPreview.find('.publish').html(book.publish);
+            newPreview.tooltip({html:true,
+                                placement: "auto",
+                                title:
+                                    "<strong>"+book.title+"</strong><br>"+
+                                    book.authors+"<br>"+
+                                    book.publish});
+            newPreview.hide();  
+            $('#previews').append(newPreview);
+            newPreview.fadeIn('slow');
+        }
+        
+        function cleanResults(){
+            $('#previews').html("");
+            $('#results').html("");
+        }
+    </script>
+
+</body>
